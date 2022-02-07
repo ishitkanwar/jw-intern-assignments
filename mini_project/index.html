@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ishit Kanwar Mini Project</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+	<div id="sidebar" class="sidebar hidden">
+        <div class="logo">
+            <img src="./download.png" alt="Company Logo">
+            <div class="topright"><a href="#" onclick="closeFunction()"><i class='bx bxs-x-circle' style='color:#aaaaaa'  ></i></a></div>
+        </div>
+        <ul>
+            <li><a href="#"><i class='bx bx-desktop' style='color:#ffffff' ></i>Dashboard</a></li>
+            <li><a href="#"><i class='bx bxs-user' style='color:#ffffff' ></i>Drivers</a></li>
+            <li><a href="#"><i class='bx bxs-user' style='color:#ffffff' ></i>Customers</a></li>
+            <li><a href="#"><i class='bx bxs-car' style='color:#ffffff' ></i>All Vehicles</a></li>
+            <li><a href="#"><i class='bx bxs-cog' style='color:#ffffff' ></i>Settings</a></li>
+        </ul>
+	</div>
+    <div class="main" id="main">
+        <div class="topbar">
+            <button id="showSidebar" class="showSidebar" onclick="openFunction()"><i class='bx bx-menu' undefined ></i></button>
+        </div>
+    </div>
+	<script type="text/javascript">
+        // Function to Display the Image. 
+        function displayImage(imageSource) {
+            let img = document.createElement("img");
+            img.src = imageSource;
+            img.alt = 'Ishit Kanwar';
+            document.getElementById("main").appendChild(img);
+            img.style.width = "400px"
+            img.style.height = "400px"
+            img.style.margin = '0 auto'
+        }
+
+		function openFunction(){
+			document.getElementById("sidebar").classList.remove('hidden');
+			document.getElementById("main").style.marginLeft="240px";
+            document.getElementById("showSidebar").style.display="none";
+		}
+
+		function closeFunction(){
+            document.getElementById("sidebar").classList.add('hidden');
+			document.getElementById("main").style.marginLeft="0px";
+            setTimeout(() => {
+                document.getElementById("showSidebar").style.display="block";
+            }, 500);
+		}
+
+        // The Following Image Source to be dynamically retrieve from the Backend.
+        let imageSource = 'https://drive.google.com/uc?id=14SZxjKu-fKpJQbFLIi9mbDTXIMmvsN5Q'
+        displayImage(imageSource);
+    </script>
+</body>
+</html>
